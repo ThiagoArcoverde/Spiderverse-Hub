@@ -50,10 +50,10 @@ export default {
             this.$router.push('Characters');
         },
         goToMidia() {
-            this.$router.go('/midia');
+            this.$router.push('Midia');
         },
         goToAuthors() {
-            this.$router.go('/authors');
+            this.$router.push('Authors');
         }
     }
 }
