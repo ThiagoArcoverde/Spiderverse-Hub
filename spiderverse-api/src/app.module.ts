@@ -4,9 +4,11 @@ import { AppService } from './app.service';
 import { StoriesModule } from './story/story.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { CharacterModule } from './character/character.module';
+import { MidiaModule } from './midia/midia.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/nest'), StoriesModule, ConfigModule.forRoot({ isGlobal: true })],
+  imports: [MongooseModule.forRoot('mongodb://localhost/spiderverse'), StoriesModule,  CharacterModule, ConfigModule.forRoot({ isGlobal: true }), MidiaModule],
   controllers: [AppController],
   providers: [AppService],
 })

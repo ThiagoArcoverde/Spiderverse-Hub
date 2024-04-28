@@ -4,7 +4,7 @@
         <img class="back-arrow" src="../assets/back-arrow-icon.png" @click="goToHome"/>
         <div class="story-container">
             <img class="arrow" src="../assets/left-arrow.png" @click="previousStory"/>
-            <img class="story-image" :src="stories[index].thumbnail" />
+            <img class="story-image" :src=stories[index].thumbnail />
             <div class="story-info">
                 <h1 style="font-weight: bolder;color: white;">{{ this.stories[index].title }}</h1>
                 <h2 style="color:white">{{ this.stories[index].pageCount}} pages</h2>
@@ -37,7 +37,6 @@ export default {
         axios.get('http://localhost:3000/stories')
             .then(response => {
                 this.stories = response.data
-                console.log(this.stories[this.index].title)
             })
     },
     components: {

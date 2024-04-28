@@ -1,6 +1,6 @@
 <template>
     <div class="footer-container">
-        <h4>Made with 🤍 by Luana e Thiago</h4>
+        <h4>Made with 🤍 by Luana e Thiago | Data provided by Marvel. © 2024 MARVEL</h4>
     </div>
 </template>
 

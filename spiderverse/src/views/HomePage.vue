@@ -47,7 +47,7 @@ export default {
             this.$router.push('Stories')
         },
         goToCharacters() {
-            this.$router.go('/characters');
+            this.$router.push('Characters');
         },
         goToMidia() {
             this.$router.go('/midia');

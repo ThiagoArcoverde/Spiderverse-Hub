@@ -10,7 +10,7 @@ export default {
     name: 'HeaderComponent',
     methods: {
         openGithub(){
-            window.open('https://github.com', '_blank');
+            window.open('https://github.com/ThiagoArcoverde/Spiderverse-Hub', '_blank');
         },
         goToHome(){
             var path = this.$router.path

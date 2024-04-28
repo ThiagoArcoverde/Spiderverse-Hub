@@ -8,7 +8,8 @@ import { HttpModule } from "@nestjs/axios";
 @Module({
     controllers: [StoriesController],
     providers: [StoriesService],
-    imports: [HttpModule, MongooseModule.forFeature([{ name: 'Story', schema: StorySchema }])]
+    imports: [HttpModule, MongooseModule.forFeature([{ name: 'Story', schema: StorySchema }])],
+    exports: [StoriesService]
 })
 
 export class StoriesModule {

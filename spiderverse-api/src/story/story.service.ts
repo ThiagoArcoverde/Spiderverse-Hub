@@ -19,11 +19,8 @@ export class StoriesService {
 
     async fetchStories() {
         const publicKey = this.configService.get('public_key')
-        console.log(publicKey)
         const ts = this.configService.get('ts')
-        console.log(ts)
         const hash = this.configService.get('hash')
-        console.log(hash)
         const url = `https://gateway.marvel.com/v1/public/comics?title=spider-verse&ts=${ts}&apikey=${publicKey}&hash=${hash}`
 
         const response = await this.httpService.get(url).toPromise();
