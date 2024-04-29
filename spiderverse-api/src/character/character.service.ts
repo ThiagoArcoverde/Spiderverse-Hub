@@ -39,7 +39,7 @@ export class CharacterService {
                 "engineered by Oscorp Industries biochemist, Dr. Conrad Marcus, who used the Oz Formula at the behest of Norman Osborn" +
                 "to create 'enhanced spiders' in an attempt to duplicate the abilities of the original Spider-Man of the Earth-1610" +
                 "Ultimate Universe.",
-            thumbnail: "../assets/Miles-morales.png"
+            thumbnail: "Miles-morales.png"
         })
         var char2 = new this.characterModel({
             id: 2,
@@ -48,7 +48,7 @@ export class CharacterService {
                 "she was bitten by a radioactive spider and becomes Spider-Woman, developing some of the classic Spider-Man personality," +
                 "conflicts, tribulations, powers and abilities. The character's enemies include Earth-65 versions of Matt Murdock," +
                 "Frank Castle, and Susan Storm.",
-            thumbnail: "../assets/Spider-woman.png"
+            thumbnail: "Spider-woman.png"
         })
         var char3 = new this.characterModel({
             id: 3,
@@ -58,7 +58,7 @@ export class CharacterService {
                 "part of President Norman Osborn's toxic waste dumping. He becomes the punk rock inspired Spider-Man, leading the" +
                 "downtrodden people of New York against Osborn's V.E.N.O.M. troops. Spider-Punk managed to kill Osborn during a riot" +
                 "by bashing the President with his guitar.",
-            thumbnail: "../assets/Spider-punk.png"
+            thumbnail: "Spider-punk.png"
         })
         var char4 = new this.characterModel({
             id: 4,
@@ -68,7 +68,7 @@ export class CharacterService {
                 "universe. Piloting a psychically-powered mech suit originally piloted by her father Peter known as the SP//dr, partially" +
                 "controlled by a radioactive spider (named SP//dr) that also shares a psychic link with her, the teenage Peni" +
                 "has been fighting daily since she was nine years old.",
-            thumbnail: "../assets/Peni-parker.png"
+            thumbnail: "Peni-parker.png"
         })
         var char5 = new this.characterModel({
             id: 5,
@@ -78,7 +78,7 @@ export class CharacterService {
                 "Tom DeFalco, and Mark Armstrong. The character existed on Earth-8311, which was a universe populated by" +
                 "anthropomorphic parody versions of the Marvel superheroes and supervillains. Spider-Ham made his feature film" +
                 "debut in Spider-Man: Into the Spider-Verse (2018), voiced by John Mulaney.",
-            thumbnail: "../assets/Spider-ham.png"
+            thumbnail: "Spider-ham.png"
         })
 
         await Promise.all([

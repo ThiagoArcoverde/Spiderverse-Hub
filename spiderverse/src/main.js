@@ -17,6 +17,16 @@ const routes = [
       path: '/characters',
       name: 'Characters',
       component: () => import ('./views/CharactersPage.vue')
+    },
+    {
+      path: '/authors',
+      name: 'Authors',
+      component: () => import ('./views/AuthorsPage.vue')
+    },
+    {
+      path: '/midia',
+      name: 'Midia',
+      component: () => import ('./views/MidiaPage.vue')
     }
   ]
   

@@ -26,7 +26,7 @@ export class StoriesService {
         const response = await this.httpService.get(url).toPromise();
         const data = response.data.data.results;
         console.log(data)
-        data.forEach(async (element) => {
+        await data.forEach(async (element) => {
             const story = new this.storyModel({
                 title: element.title,
                 id: element.id,

@@ -1,64 +1,65 @@
 <template>
     <div class="page">
         <HeaderComponent />
-        <img class="back-arrow" src="../assets/back-arrow-icon.png" @click="goToHome"/>
+        <img class="back-arrow" src="../assets/back-arrow-icon.png" @click="goToHome" />
         <div class="character-container">
-            <img class="arrow" src="../assets/left-arrow.png" @click="previousCharacter"/>
-            <img class="character-image" :src="this.characters[index].imageUrl" alt="Character Image"/>
+            <img class="arrow" src="../assets/left-arrow.png" @click="previousMidiar" />
+            <img class="character-image" :src="this.midia[index].imageUrl" alt="Character Image" />
             <div class="character-info">
-                <h1 style="font-weight: bolder;color: white;">{{ this.characters[index].name }}</h1>
+                <h1 style="font-weight: bolder;color: white;">{{ this.midia[index].title }}</h1>
                 <h2 style="font-weight: bold;color: red;">Description:</h2>
-                <p style="color:white;">{{ this.characters[index].description }}</p>
-            </div>  
-            <img class="arrow" src="../assets/right-arrow.png" @click="nextCharacter"/>
+                <p style="color:white;">{{ this.midia[index].description }}</p>
+            </div>
+            <img class="arrow" src="../assets/right-arrow.png" @click="nextMidia" />
         </div>
-        <FooterComponent/>
+        <FooterComponent />
     </div>
 </template>
 
 <script>
-import axios from 'axios';
 import HeaderComponent from '../components/HeaderComponent.vue';
-import FooterComponent from '@/components/FooterComponent.vue';
+import FooterComponent from '../components/FooterComponent.vue';
+import axios from 'axios';
+
 export default {
-    name: 'CharactersPage',
     components: {
         HeaderComponent,
         FooterComponent
     },
-    data(){
+    data() {
         return {
             index: 0,
-            characters: [{}]
+            midia: [{}]
         }
     },
-    created(){
-        axios.get('http://localhost:3000/character')
+    created() {
+        axios.get('http://localhost:3000/midia')
             .then(response => {
-                this.characters = response.data
-                //sort characters
-                this.characters.sort((a, b) => a.id - b.id)
-                this.characters.map(character => {
-                    console.log(character.thumbnail)
-                    character.imageUrl = require(`../assets/${character.thumbnail}`)
+                this.midia = response.data
+                //sort midia
+                this.midia.sort((a, b) => a.id - b.id)
+                this.midia.map(midia => {
+                    console.log(midia.thumbnail)
+                    midia.imageUrl = require(`../assets/${midia.thumbnail}`)
                 })
             })
     },
     methods: {
-        nextCharacter() {
+        nextMidia() {
             this.index = this.index + 1
-            if (this.index >= this.characters.length)
+            if (this.index >= this.midia.length)
                 this.index = 0
         },
-        previousCharacter(){
+        previousMidia(){
             this.index = this.index - 1
             if (this.index < 0)
-                this.index = this.characters.length - 1
+                this.index = this.midia.length - 1
         },
         goToHome(){
             this.$router.push('/')
         }
     }
+
 }
 </script>
 
@@ -88,7 +89,7 @@ h4 {
     height: 100vh;
 }
 
-.arrow{
+.arrow {
     height: 16%;
     margin: auto;
     margin-left: 4vw;
@@ -96,7 +97,7 @@ h4 {
     cursor: pointer;
 }
 
-.character-info{
+.character-info {
     width: 100%;
     padding: 4%;
 }
@@ -128,5 +129,4 @@ h4 {
     margin-left: 10vw;
     cursor: pointer;
 }
-
 </style>
